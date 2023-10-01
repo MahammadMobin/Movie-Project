@@ -1,0 +1,17 @@
+::-webkit-scrollbar{
+    display: none;
+}
+.activeLink{
+    border:1px solid rgb(255, 0, 128);
+    color:white;
+    font:bold
+}
+.activex{
+    background: rgb(54, 65, 85);
+    border-radius: .3em;
+}
+.bgx{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
