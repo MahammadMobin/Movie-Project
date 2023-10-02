@@ -5,10 +5,11 @@
 
 
 <ol>
-    <li>State Management</li>
     <li>Context API</li>
     <li>React Router DOM</li>
     <li>RRM ( Server Side )</li>
+    <li>Conditional Rendering</li>
+    <li>State Management</li>
     <li>REST API</li>
 </ol>
 
