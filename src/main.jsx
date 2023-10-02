@@ -7,6 +7,7 @@ import Home from './pages/Homepage/Home.jsx'
 import Detail from './pages/Detailspage/Detail'
 import Search from './pages/Searchpage/Search'
 import MoveContext from './context/MoveContext'
+import { apiKey } from './constant/tmdbApiKey'
 
 
 const router = createBrowserRouter([
@@ -19,13 +20,18 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/detail',
-        element: <Detail />
+        path:'/detail',
+        element:<Detail/>
+      },
+      {
+        path:'/detail/:sid',
+        loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.sid}?api_key=${apiKey}`),
+        element:<Detail/>
       },
       {
         path: '/search',
         element: <Search />
-      }
+      },
     ]
   }
 ])

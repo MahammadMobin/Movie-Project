@@ -1,18 +1,24 @@
 import { useContext, useState } from "react";
 import { HiForward, HiMagnifyingGlass } from "react-icons/hi2";
 import { MyMovieContext } from "../context/MoveContext";
+import { useNavigate } from "react-router-dom";
 
 
 const AppNavbar = () => {
     const {setNavClickList}=useContext(MyMovieContext)
     const [activeIndex,setActiveIndex]=useState(2)
+    const navigate=useNavigate()
 
     const handleClickNavItem = (index) => {
         setActiveIndex(index);
+        navigate('/')
       };
 
     const handleClickNav = (val)=>{
         setNavClickList(val)
+    }
+    const handleClickGoHome=()=>{
+        navigate('/')
     }
     
 
@@ -37,7 +43,7 @@ const AppNavbar = () => {
                             {NavLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl"><HiForward className="text-3xl text-pink-600" />MOV-X</a>
+                    <a onClick={handleClickGoHome} className="btn btn-ghost normal-case text-xl"><HiForward className="text-3xl text-pink-600" />MOV-X</a>
                 </div>
                 <div className="navbar-center ml-auto hidden lg:mr-3 lg:flex">
                     <ul className="menu text-lg menu-horizontal px-1">

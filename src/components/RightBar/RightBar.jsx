@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { MyMovieContext } from "../../context/MoveContext"
 import MoviesShowcase from "../MoviesShowcase/MoviesShowcase";
 
@@ -11,7 +11,7 @@ const RightBar = () => {
 
 
     return (
-        <div className="flex-1 flex-grow bg-pink-700 overflow-y-scroll">
+        <div className="flex-1 flex-grow bg-black overflow-y-scroll">
             <MoviesShowcase title={navClickList} datas={datas}/>
         </div>
     )
