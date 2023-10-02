@@ -1,5 +1,5 @@
 # Mov-X Movie App
-## [Live Link](https://markdownlivepreview.com/)
+## [Live Link](https://mov-x001.netlify.app/)
 
 ## Features : 
 
