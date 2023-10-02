@@ -21,7 +21,9 @@ const Detail = () => {
   useEffect(() => {
     fetch(` https://api.themoviedb.org/3/movie/${x.id}/similar?api_key=${apiKey}`)
       .then((res) => res.json())
-      .then((res) => setSimilar(res.results))
+      .then((res) => {
+        setSimilar(res.results)
+      })
       .catch((err) => console.log(err));
   }, [similar]);
 
@@ -43,11 +45,11 @@ const Detail = () => {
             <div className="flex space-x-5 mb-2">
               <ul>
                 <li className="font-bold">Genres :</li>
-                {x.genres.map((one) => <li className="ml-5" key={one.id}>{one.name}</li>)}
+                {x.genres.map((one,i) => <li className="ml-5" key={i}>{one.name}</li>)}
               </ul>
               <ul>
                 <li className="font-bold">Audio :</li>
-                {x?.spoken_languages.map((one) => <li className="ml-5" key={one.id}>{one.english_name}</li>)}
+                {x?.spoken_languages.map((one,i) => <li className="ml-5" key={i}>{one.english_name}</li>)}
               </ul>
             </div>
             <div className="ml-5">

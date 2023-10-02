@@ -37,7 +37,7 @@ const OneView = ({ data }) => {
         <Link to={`/detail/${data?.id}`}>
             <div style={{
                 backgroundImage: `url(${fullUrl})`
-            }} className="w-[300px] bgx h-[400px] bg-pink-300 rounded-lg overflow-hidden">
+            }} className="w-[300px] bgx h-[400px] bg-zinc-900 rounded-lg overflow-hidden">
 
                 <div className=" transchild duration-500 flex justify-center bg-red-400 w-full h-full flex-col">
                     <div className="w-full flex justify-between items-center p-3 bg-pink-600">

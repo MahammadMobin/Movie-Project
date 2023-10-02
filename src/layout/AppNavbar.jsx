@@ -31,6 +31,7 @@ const AppNavbar = () => {
             .then((res) => res.json())
             .then((res) => setDatas(res.results))
             .catch((err) => console.log(err));
+        navigate('/')
     }
 
 

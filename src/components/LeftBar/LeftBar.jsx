@@ -6,7 +6,7 @@ import { MyMovieContext } from "../../context/MoveContext";
 const LeftBar = () => {
   const [datasn, setDatasn] = useState([]);
   const [activeItem, setActiveItem] = useState(null);
-  const {setDatas,datas}=useContext(MyMovieContext);
+  const {setDatas}=useContext(MyMovieContext);
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`)
@@ -17,7 +17,6 @@ const LeftBar = () => {
 
   const handleClick = (id,index) => {
     setActiveItem(index);
-    console.log(id);
     fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${id}`)
       .then((res) => res.json())
       .then((res) => setDatas(res.results))
