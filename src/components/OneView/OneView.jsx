@@ -19,6 +19,7 @@ const OneView = ({ data }) => {
             .catch((err) => console.log(err));
 
     }, []);
+
     useEffect(() => {
         const temp = [];
         allGen.forEach(one => {
@@ -32,20 +33,14 @@ const OneView = ({ data }) => {
     }, [allGen])
 
 
-    const handleClick = (val) => {
-        console.log(val);
-    }
-
-
-
     return (
         <Link to={`/detail/${data?.id}`}>
-            <div onClick={() => { handleClick(data) }} style={{
+            <div style={{
                 backgroundImage: `url(${fullUrl})`
             }} className="w-[300px] bgx h-[400px] bg-pink-300 rounded-lg overflow-hidden">
 
                 <div className=" transchild duration-500 flex justify-center bg-red-400 w-full h-full flex-col">
-                    <div className="w-full flex justify-between p-3 bg-pink-600">
+                    <div className="w-full flex justify-between items-center p-3 bg-pink-600">
                         <p className="text-white font-bold">{data?.title}</p>
                         <span className=" font-bold text-xs p-2 rounded-full bg-white text-black">{data?.vote_average}</span>
                     </div>

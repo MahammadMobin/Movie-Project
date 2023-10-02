@@ -7,10 +7,12 @@ export const MyMovieContext = createContext(null);
 
 const MoveContext = ({ children }) => {
 
-  const [navClickList, setNavClickList] = useState('popular')
-
+  const [navClickList, setNavClickList] = useState('popular');
+  const [clickGenId,setClickGenId]=useState(0)
+  const [searchText,setSearchText]=useState('')
   const [datas, setDatas] = useState([])
 
+  // --------initial search-----------//
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${navClickList}?api_key=${apiKey}`)
       .then((res) => res.json())
@@ -18,8 +20,7 @@ const MoveContext = ({ children }) => {
       .catch((err) => console.log(err));
   }, [navClickList])
 
-
-  const provideItems = { navClickList, setNavClickList, datas }
+  const provideItems = { navClickList, setNavClickList, datas, setDatas, clickGenId, setClickGenId, searchText, setSearchText }
 
 
   return (

@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom"
-import { apiKey, getPosterPath } from "../../constant/tmdbApiKey";
+import { apiKey } from "../../constant/tmdbApiKey";
 import { useEffect, useState } from "react";
 import OneView from "../../components/OneView/OneView";
 import { HiStar } from "react-icons/hi2";
@@ -10,7 +10,6 @@ const Detail = () => {
   const [similar, setSimilar] = useState([])
 
   const x = useLoaderData()
-  console.log(x);
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${x.id}/images?api_key=${apiKey}`)
@@ -35,7 +34,7 @@ const Detail = () => {
         <div className="flex justify-center items-center flex-col lg:flex-row lg:space-x-10 my-10 lg:my-20">
           <div className="min-w-[300px] mb-10 lg:mb-0 h-[400px]  rounded-lg bg-red-400 bgx" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${x?.poster_path})` }}></div>
           <div className="px-5 lg:px-0">
-            <h1 className="text-5xl mb-5 font-bold max-w-2xl">{x?.original_title}</h1>
+            <h1 className="text-5xl mb-5 font-bold max-w-2xl">{x?.title}</h1>
             <p className="my-2">{x?.release_date} | {x?.runtime} min | 1080P-FHD | <span className=" font-bold">Total View</span> : {x?.vote_count}</p>
             <p className="flex items-center"><HiStar className="text-3xl text-yellow-400 mb-2" /><span className="-mt-2 text-lg ml-1 font-bold">{x?.vote_average.toFixed(1)}</span></p>
             <p><span className="font-semibold">Original Title : </span><span>{x?.original_title}</span></p>

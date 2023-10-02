@@ -20,13 +20,13 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path:'/detail',
-        element:<Detail/>
+        path: '/detail',
+        element: <Detail />
       },
       {
-        path:'/detail/:sid',
-        loader:({params})=>fetch(`https://api.themoviedb.org/3/movie/${params.sid}?api_key=${apiKey}`),
-        element:<Detail/>
+        path: '/detail/:sid',
+        loader: ({ params }) => fetch(`https://api.themoviedb.org/3/movie/${params.sid}?api_key=${apiKey}`),
+        element: <Detail />
       },
       {
         path: '/search',
@@ -35,7 +35,6 @@ const router = createBrowserRouter([
     ]
   }
 ])
-
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
